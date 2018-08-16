@@ -9,8 +9,16 @@
 
 // The Symbol used to tag the ReactElement-like types. If there is no native Symbol
 // nor polyfill, then a plain number is used for performance.
+
 const hasSymbol = typeof Symbol === 'function' && Symbol.for;
 
+/**
+* Symbol.for(key)
+* 
+* Método procura por símbolos existentes em um registro de símbolo em tempo de execução 
+* com a chave fornecida e retorna se encontrado. Caso contrário, um novo símbolo será 
+* criado no registro de símbolo global com essa chave.
+*/
 export const REACT_ELEMENT_TYPE = hasSymbol
   ? Symbol.for('react.element')
   : 0xeac7;
